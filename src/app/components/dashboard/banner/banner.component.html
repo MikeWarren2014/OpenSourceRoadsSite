@@ -1,0 +1,11 @@
+<nav>
+    <button id="menuButton" (click)="toggleMenuVisible()">
+        <div id="menuBars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </button>
+    <a id="pageTitle" routerLink="/home">Open Source Roads</a>
+</nav>
+<menu *ngIf="menuVisible"></menu>

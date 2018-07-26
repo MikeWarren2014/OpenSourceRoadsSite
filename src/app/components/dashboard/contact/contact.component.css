@@ -1,0 +1,86 @@
+
+
+.content { 
+  background-color: #222;
+  margin: 0 20px;
+  padding: 20px 0;
+  border-radius: 3px;
+  
+}
+.content > div { 
+  margin: 0 7px;
+}
+
+h2 { 
+  font-size : 2em;
+}
+
+h3 { 
+  font-size : 1.5em;
+}
+
+.contact-field-heading { 
+  font-style: oblique;
+}
+.content, .column { 
+  overflow: hidden;
+}
+
+.column { 
+  float : left;
+}
+
+.first, .second { 
+  width : 50%; 
+
+}
+
+.left { 
+  float : left;
+}
+
+.right { 
+  float : right;
+}
+
+.field-label { 
+  width : 20%;
+}
+
+.field { 
+  width : 70%;
+}
+
+.ng-invalid.ng-dirty { 
+  background-color: #ff5555;
+  border-color: red;
+}
+
+.error { 
+  color: red;
+}
+
+.row { 
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+#message { 
+  height: 200px;
+}
+
+.form-button {
+  height: 25px;
+  border-radius: 3px;
+}
+
+.form-button:hover { 
+  background-color: whitesmoke;
+}
+
+.form-button:active { 
+  background-color: #474747;
+  color: white;
+}
