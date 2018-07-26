@@ -22,6 +22,16 @@ h3 {
 .contact-field-heading { 
   font-style: oblique;
 }
+
+.contact { 
+  margin-top : 25px;
+  margin-bottom : 25px;
+}
+
+.contact > span > *, .contact > span { 
+  white-space: pre-line;
+}
+
 .content, .column { 
   overflow: hidden;
 }

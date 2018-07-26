@@ -8,8 +8,10 @@
     <div>
       <h3>Contact information</h3>
       <div class="first column">
-        <h4 class="contact-field-heading">Email</h4>
-        <span><strong>mike.warren@opensourceroads.com</strong></span>
+        <div *ngFor="let contact of contacts" class="contact">
+          <span>{{contact.name}}</span><br>
+          <span>{{contact.email}}</span> 
+        </div>
       </div>
       <div class="second column">
         <span class="row">

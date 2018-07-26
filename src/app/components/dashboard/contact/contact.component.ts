@@ -13,6 +13,9 @@ import { Person } from './person';
 export class ContactComponent implements OnInit {
 
   title = 'Contact';
+  
+  contacts = RECIPIENTS;
+
 
   pointOfContact : PointOfContact = RECIPIENTS[0];
   emailMessage   : EmailMessage = EmailMessage.EMPTY_FIELDS;
