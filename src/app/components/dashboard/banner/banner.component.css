@@ -1,0 +1,74 @@
+nav { 
+    text-align: center;
+    overflow : hidden;
+    background-color: black;
+  }
+
+menu { 
+    height: 100%;
+    width: 150px;
+    padding: 0;
+    margin-top: 0;
+    text-align: left;
+    z-index : 1;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+}
+  
+#menuButton { 
+    background-color : black;
+    border : 2px solid yellow;
+    height : 30px;
+    width : 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding: 5px 3px;
+    margin-left: 10px;
+    margin-top: 6px;
+    float : left;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#pageTitle { 
+    color: white;
+    text-decoration: initial;
+    background-color: black;
+}
+
+#menuBars { 
+    float : right;
+}
+
+#menuButton:hover { 
+    background-color : white;
+}
+
+#menuButton:hover .bar { 
+    background-color : black;
+}
+
+#menuButton:active { 
+    background-color: yellow;
+}
+
+#menuButton:active .bar {
+    background-color : black;
+}
+
+.bar { 
+    background-color : white;
+    width: 20px;
+    height: 2px;
+}
+
+.bar + .bar { 
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#pageTitle {
+    font-family: monospace;
+    font-size: 3em;
+}
