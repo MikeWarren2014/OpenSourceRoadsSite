@@ -1,10 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-<<<<<<< HEAD
-=======
-    "baseUrl": "./",
->>>>>>> 294ca062721460d65b2f2a12a5b9ed4e9ca3e898
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -16,11 +12,7 @@
       "node_modules/@types"
     ],
     "lib": [
-<<<<<<< HEAD
       "es2016",
-=======
-      "es2017",
->>>>>>> 294ca062721460d65b2f2a12a5b9ed4e9ca3e898
       "dom"
     ]
   }

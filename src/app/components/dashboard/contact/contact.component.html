@@ -1,39 +1,24 @@
 <div>
   <h2 class="h2">{{title | uppercase}}</h2>
   <p>
-<<<<<<< HEAD
     Here is our information. Please leave a message and we shall return it as soon as possible!
-=======
-    This is where people should go to reach out to us either from the website, or via our emails. 
->>>>>>> 294ca062721460d65b2f2a12a5b9ed4e9ca3e898
   </p>
 
   <div class="content">
     <div>
-<<<<<<< HEAD
       <h3>Contacts</h3>
       <div class="first column">
         <div *ngFor="let contact of contacts" class="contact">
           <span>{{contact.name}}</span><br>
           <span>{{contact.roles.join(', ')}}</span> <br>
           <a class="material-icons" (click)="pointOfContact = contact" title="Send message to {{contact.name}}">email</a>
-=======
-      <h3>Contact information</h3>
-      <div class="first column">
-        <div *ngFor="let contact of contacts" class="contact">
-          <span>{{contact.name}}</span><br>
-          <span>{{contact.email}}</span> 
->>>>>>> 294ca062721460d65b2f2a12a5b9ed4e9ca3e898
         </div>
       </div>
       <div class="second column">
         <span class="row">
-<<<<<<< HEAD
           <h4 style="display: inline">To: </h4> {{pointOfContact.name}}
         </span>
         <span class="row">
-=======
->>>>>>> 294ca062721460d65b2f2a12a5b9ed4e9ca3e898
           <label for="subject" class="field-label column">Subject</label>
           <input id="subject" name="subject" #subject="ngModel" [(ngModel)]="emailMessage.subject" type="text" class="field column" required autofocus>
           <button *ngIf="emailMessage.subject" (click)="emailMessage.subject = ''">Clear</button>

@@ -5,9 +5,6 @@ export class Person {
 
     }
 
-    setName(firstName : string, lastName : string) { 
-        this.name = firstName + ' ' + lastName;
-    }
 
     public static EMPTY_FIELDS : Person = new Person('', '');
 }

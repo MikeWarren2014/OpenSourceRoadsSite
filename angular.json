@@ -3,11 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-<<<<<<< HEAD
     "Website": {
-=======
-    "OpenSourceRoadsSite": {
->>>>>>> 294ca062721460d65b2f2a12a5b9ed4e9ca3e898
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,11 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-<<<<<<< HEAD
             "outputPath": "dist/Website",
-=======
-            "outputPath": "dist/OpenSourceRoadsSite",
->>>>>>> 294ca062721460d65b2f2a12a5b9ed4e9ca3e898
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,30 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-<<<<<<< HEAD
             "browserTarget": "Website:build"
           },
           "configurations": {
             "production": {
               "browserTarget": "Website:build:production"
-=======
-            "browserTarget": "OpenSourceRoadsSite:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "OpenSourceRoadsSite:build:production"
->>>>>>> 294ca062721460d65b2f2a12a5b9ed4e9ca3e898
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-<<<<<<< HEAD
             "browserTarget": "Website:build"
-=======
-            "browserTarget": "OpenSourceRoadsSite:build"
->>>>>>> 294ca062721460d65b2f2a12a5b9ed4e9ca3e898
           }
         },
         "test": {
@@ -115,11 +95,7 @@
         }
       }
     },
-<<<<<<< HEAD
     "Website-e2e": {
-=======
-    "OpenSourceRoadsSite-e2e": {
->>>>>>> 294ca062721460d65b2f2a12a5b9ed4e9ca3e898
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -127,11 +103,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-<<<<<<< HEAD
             "devServerTarget": "Website:serve"
-=======
-            "devServerTarget": "OpenSourceRoadsSite:serve"
->>>>>>> 294ca062721460d65b2f2a12a5b9ed4e9ca3e898
           }
         },
         "lint": {
@@ -146,9 +118,5 @@
       }
     }
   },
-<<<<<<< HEAD
   "defaultProject": "Website"
-=======
-  "defaultProject": "OpenSourceRoadsSite"
->>>>>>> 294ca062721460d65b2f2a12a5b9ed4e9ca3e898
 }

@@ -13,19 +13,12 @@ import { Person } from './person';
 export class ContactComponent implements OnInit {
 
   title = 'Contact';
-<<<<<<< HEAD
-
-  pointOfContact : PointOfContact = RECIPIENTS[0];
-  emailMessage   : EmailMessage = EmailMessage.EMPTY_FIELDS;
-  contacts       = RECIPIENTS;
-=======
   
   contacts = RECIPIENTS;
 
 
   pointOfContact : PointOfContact = RECIPIENTS[0];
   emailMessage   : EmailMessage = EmailMessage.EMPTY_FIELDS;
->>>>>>> 294ca062721460d65b2f2a12a5b9ed4e9ca3e898
 
   constructor() { }
 
