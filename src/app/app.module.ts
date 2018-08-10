@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
 import { ContactComponent } from './components/dashboard/contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { ContactService } from './services/contact.service';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,13 +21,13 @@ import { ContactService } from './services/contact.service';
     MenuComponent,
     AboutComponent,
     ContactComponent
-    
   ],
+  
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    FormsModule
-    
+    FormsModule,
+    HttpClientModule
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]

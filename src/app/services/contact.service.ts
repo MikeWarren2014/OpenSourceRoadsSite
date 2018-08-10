@@ -14,7 +14,7 @@ export class ContactService {
     send(message : EmailMessage) : Observable<EmailMessage> { 
         return this.http.post<EmailMessage>(
             "https://script.google.com/macros/s/AKfycbyEuvROpXUEi4wTX4N06nqF6oHlwihVc9Ut6-OG04zPi5yuOCzn/exec",
-            JSON.stringify(message)
+            JSON.stringify({ data : message })
         );
     }
 }

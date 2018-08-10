@@ -3,7 +3,7 @@ import { PointOfContact } from './point-of-contact';
 import { EmailMessage } from './email-message';
 import { RECIPIENTS } from './recipients';
 import { Person } from './person';
-
+import { ContactService } from '../../../services/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -20,7 +20,7 @@ export class ContactComponent implements OnInit {
   pointOfContact : PointOfContact = RECIPIENTS[0];
   emailMessage   : EmailMessage = EmailMessage.EMPTY_FIELDS;
 
-  constructor() { }
+  constructor(private contactService : ContactService) { }
 
   ngOnInit() {
   }
@@ -31,6 +31,8 @@ export class ContactComponent implements OnInit {
   }
 
   sendEmail() { 
-    console.log(JSON.stringify(this.emailMessage, null, '\t'));
+    this.contactService
+      .send(this.emailMessage)
+      .subscribe(console.log)
   }
 }
