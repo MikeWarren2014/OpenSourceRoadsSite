@@ -2,6 +2,7 @@ import { Routes } from "@angular/router";
 import { HomeComponent } from "./components/home/home.component";
 import { AboutComponent } from "./components/dashboard/about/about.component";
 import { ContactComponent } from "./components/dashboard/contact/contact.component";
+import { MessageSentComponent } from "./components/dashboard/message-sent/message-sent.component";
 
 export const routes : Routes = [
     {
@@ -19,7 +20,23 @@ export const routes : Routes = [
     },
     {
         path : 'contact',
-        component : ContactComponent
+        children: [
+            {
+                path: '',
+                component: ContactComponent
+            },
+            {
+                path: 'messageSent',
+                component: MessageSentComponent
+                // TODO: implement a guard on this component, that checks for "message sent" status data. 
+                // if there isn't any, it should bounce to ContactComponent
+            },
+            {
+                path: '**',
+                redirectTo: '',
+                pathMatch: 'full'
+            }
+        ]
     }, 
     {
         path : '**',

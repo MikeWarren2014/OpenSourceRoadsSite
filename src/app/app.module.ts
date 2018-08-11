@@ -12,6 +12,7 @@ import { ContactComponent } from './components/dashboard/contact/contact.compone
 import { FormsModule } from '@angular/forms';
 import { ContactService } from './services/contact.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MessageSentComponent } from './components/dashboard/message-sent/message-sent.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     BannerComponent,
     MenuComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    MessageSentComponent
   ],
   
   imports: [
