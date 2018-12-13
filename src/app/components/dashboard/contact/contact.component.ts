@@ -16,7 +16,7 @@ import { FakeSenderService } from '../../../services/fake-sender.service';
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
-  providers: [MessageSentService,
+  providers: [
     { 
       provide : SenderService,
       useClass : FakeSenderService
