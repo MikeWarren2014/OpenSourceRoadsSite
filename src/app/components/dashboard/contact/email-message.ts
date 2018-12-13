@@ -16,4 +16,13 @@ export class EmailMessage {
         '',
         RECIPIENTS[0]);
 
+    /**
+     * 
+     * @param email the email to validate
+     * @returns that email is of valid format
+     */
+    public static isValidEmail(email : string) : boolean { 
+        return /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(email)
+    }
+
 }

@@ -3,6 +3,7 @@ import { HomeComponent } from "./components/home/home.component";
 import { AboutComponent } from "./components/dashboard/about/about.component";
 import { ContactComponent } from "./components/dashboard/contact/contact.component";
 import { MessageSentComponent } from "./components/dashboard/message-sent/message-sent.component";
+import { MessageSentGuard } from "./guards/message-sent-guard";
 
 export const routes : Routes = [
     {
@@ -27,9 +28,10 @@ export const routes : Routes = [
             },
             {
                 path: 'messageSent',
-                component: MessageSentComponent
+                component: MessageSentComponent,
                 // TODO: implement a guard on this component, that checks for "message sent" status data. 
                 // if there isn't any, it should bounce to ContactComponent
+                canActivate: [MessageSentGuard]
             },
             {
                 path: '**',

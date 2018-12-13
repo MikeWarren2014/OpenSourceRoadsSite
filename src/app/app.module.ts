@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { ContactService } from './services/contact.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MessageSentComponent } from './components/dashboard/message-sent/message-sent.component';
+import { MessageSentGuard } from './guards/message-sent-guard';
+import { MessageSentService } from './services/message-sent.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { MessageSentComponent } from './components/dashboard/message-sent/messag
     FormsModule,
     HttpClientModule
   ],
-  providers: [ContactService],
+  providers: [ContactService, MessageSentGuard, MessageSentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
