@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/Website",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -29,6 +30,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -118,5 +125,8 @@
       }
     }
   },
-  "defaultProject": "Website"
+  "defaultProject": "Website",
+  "cli": {
+    "analytics": "f06e7ff8-474f-4c56-80ca-c83e696a8f78"
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { BannerComponent } from './components/dashboard/banner/banner.component'
+import { BannerComponent } from './components/dashboard/banner/banner.component';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'OpenSourceRoads';
    @ViewChild(BannerComponent) banner : BannerComponent;
 
-   constructor() {} 
+   constructor() {}
 
-   ngOnInit() {} 
+   ngOnInit() {console.log(this.banner)}
 }
