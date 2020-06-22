@@ -1,22 +1,22 @@
 #page-content {
-     background-image: url(//ikteocheckpoint.gr/wp-content/uploads/2015/01/KTEO-CHECKPOINT-BACKGROUND.jpg); 
+     background-image: url(//ikteocheckpoint.gr/wp-content/uploads/2015/01/KTEO-CHECKPOINT-BACKGROUND.jpg);
 
 }
 
-* { 
+* {
     font-family : monospace;
-    
+
 }
 
-p, span, div { 
+p, span, div, a {
     color: #ffffae;
 }
 
-.left { 
+.left {
     float : left;
 }
 
-.right { 
+.right {
     float : right;
 }
 
