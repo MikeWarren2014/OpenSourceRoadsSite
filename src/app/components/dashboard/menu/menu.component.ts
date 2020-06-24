@@ -8,7 +8,7 @@ import { AutoUnsubscribe } from '../../../auto-unsubscribe';
 import { filter } from 'rxjs/operators';
 
 @Component({
-  selector: 'menu',
+  selector: 'side-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
@@ -31,12 +31,12 @@ export class MenuComponent implements OnInit {
 
   }
 
-  
+
 
   ngOnInit() {
   }
 
-  markSelected(option : MenuOption) { 
+  markSelected(option : MenuOption) {
     this.selectedMenuOption = option;
   }
 

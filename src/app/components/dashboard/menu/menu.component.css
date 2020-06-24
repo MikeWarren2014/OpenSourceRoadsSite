@@ -9,7 +9,7 @@ li {
     height: 1.5em;
 }
 
-.menu-option { 
+.menu-option {
     float: left;
     width: 110px;
     color: white;
@@ -18,11 +18,11 @@ li {
     font-size: 1.5em;
 }
 
-.menu-option:hover { 
+.menu-option:hover {
     color: yellow;
     text-decoration: underline;
 }
 
-.selected { 
+.selected {
     background-color: grey;
 }

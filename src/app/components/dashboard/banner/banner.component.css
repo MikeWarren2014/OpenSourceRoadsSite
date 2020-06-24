@@ -9,17 +9,6 @@ nav {
   width: 100%;
 }
 
-menu {
-  height: 100%;
-  width: 150px;
-  padding: 0;
-  margin-top: 0;
-  text-align: left;
-  z-index: 1;
-  background-color: rgb(0, 0, 0);
-  position: fixed;
-}
-
 #menuButton {
   background-color: black;
   border: 2px solid yellow;

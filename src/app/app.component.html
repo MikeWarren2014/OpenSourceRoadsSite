@@ -1,8 +1,11 @@
 <div id="page-content" style="background-color: rgb(70, 73, 78)">
   <banner #banner></banner>
 
-  <div [ngStyle]="{ 'margin-left' : (banner.menuVisible) ? '150px'  : '0'}">
-    <router-outlet ></router-outlet>
+  <div class="container-fluid">
+    <side-menu *ngIf="banner.menuVisible"></side-menu>
+    <div [ngStyle]="{ 'margin-left' : (banner.menuVisible) ? '150px'  : '0'}">
+      <router-outlet ></router-outlet>
+    </div>
   </div>
 </div>
 
