@@ -41,6 +41,15 @@ a.material-icons:active {
 
 }
 
+.field-label {
+  padding-left: 0;
+}
+
+.field {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 .row {
   margin-top: 10px;
   margin-bottom: 10px;
