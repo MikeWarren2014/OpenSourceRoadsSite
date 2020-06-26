@@ -7,17 +7,14 @@ p, span, div, a {
     color: #ffffae;
 }
 
-.container-fluid {
-  top: 0;
-  margin-top: 45px; /* TODO: We should **really** find another way to go about this. We shouldn't be hardcoding in stuff like this. */
+.container-fluid .row:first-child {
+  padding-top: 58px; /* TODO: we need to find a different way than just hardcoding it */
 }
 
 side-menu {
   height: 100%;
-  width: 150px;
   padding: 0;
   text-align: left;
-  z-index: 1;
   background-color: rgb(0, 0, 0);
   position: fixed;
 }
