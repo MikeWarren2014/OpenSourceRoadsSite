@@ -65,4 +65,5 @@ nav {
 #pageTitle {
   font-family: monospace;
   font-size: 3em;
+  width: 100%;
 }

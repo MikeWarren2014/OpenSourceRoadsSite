@@ -2,9 +2,12 @@
   <banner #banner></banner>
 
   <div class="container-fluid">
-    <side-menu *ngIf="banner.menuVisible"></side-menu>
-    <div [ngStyle]="{ 'margin-left' : (banner.menuVisible) ? '150px'  : '0'}">
-      <router-outlet ></router-outlet>
+    <div class="row">
+      <side-menu *ngIf="banner.menuVisible" class="col-md-2"></side-menu>
+      <div [ngClass]="(banner.menuVisible) ? 'col-md-10' : 'col-md-12'" class="ml-sm-auto">
+        <router-outlet ></router-outlet>
+      </div>
+
     </div>
   </div>
 </div>

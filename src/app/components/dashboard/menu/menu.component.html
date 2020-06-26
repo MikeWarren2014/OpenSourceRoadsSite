@@ -1,11 +1,11 @@
-<nav>
+<nav class="w-100">
   <div>
     <ul class="menu" class="nav navbar-nav">
-      <li *ngFor="let menuOption of menuOptions" [class.selected]="selectedMenuOption === menuOption">
-        <a class="menu-option" [routerLink]="menuOption.routerLink" (click)="markSelected(menuOption)">{{menuOption.text}}</a>
+      <li *ngFor="let menuOption of menuOptions" [class.selected]="selectedMenuOption === menuOption" class="nav-item p-3">
+        <a class="menu-option nav-link w-100" [routerLink]="menuOption.routerLink" (click)="markSelected(menuOption)">{{menuOption.text}}</a>
       </li>
-    
+
     </ul>
-    
+
   </div>
 </nav>

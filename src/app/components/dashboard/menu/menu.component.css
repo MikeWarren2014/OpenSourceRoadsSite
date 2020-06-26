@@ -4,14 +4,8 @@ ul {
     padding-left: 0;
 }
 
-li {
-    padding: 20px 10px;
-    height: 1.5em;
-}
-
 .menu-option {
     float: left;
-    width: 110px;
     color: white;
     text-decoration: none;
     font-family: monospace;
