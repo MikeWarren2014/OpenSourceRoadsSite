@@ -1,5 +1,5 @@
-import { PointOfContact } from "./point-of-contact";
-import { Person } from "./person";
+import { PointOfContact } from "../../../models/point-of-contact";
+import { Person } from "../../../models/person";
 
 export const RECIPIENTS : PointOfContact[] = [
     {

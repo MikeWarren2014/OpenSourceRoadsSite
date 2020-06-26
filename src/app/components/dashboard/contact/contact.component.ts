@@ -1,8 +1,8 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
-import { PointOfContact } from './point-of-contact';
+import { Component, OnInit } from '@angular/core';
+import { PointOfContact } from '../../../models/point-of-contact';
 import { EmailMessage } from './email-message';
 import { RECIPIENTS } from './recipients';
-import { Person } from './person';
+import { Person } from '../../../models/person';
 import { ContactService } from '../../../services/contact.service';
 import { Observable } from 'rxjs';
 import { AutoUnsubscribe } from '../../../auto-unsubscribe';
@@ -12,72 +12,77 @@ import { SenderService } from '../../../services/sender.service';
 import { StubSenderService } from '../../../services/stub-sender.service';
 import { FakeSenderService } from '../../../services/fake-sender.service';
 
+import { isEmptyObject } from "../../../utils/general";
+import { NameRegex, EmailRegex } from '../../../constants/validation';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
   providers: [
-    { 
+    {
       provide : SenderService,
-      useClass : FakeSenderService
+      useClass : ContactService
     }]
 })
 @AutoUnsubscribe
 export class ContactComponent implements OnInit {
 
   title = 'Contact';
-  
+
   contacts = RECIPIENTS;
 
   // is the form submitting?
+  // TODO: can we replace this?!
   formSubmitting = false
 
   pointOfContact : PointOfContact = RECIPIENTS[0];
-  emailMessage   : EmailMessage = EmailMessage.EMPTY_FIELDS;
+  emailMessage   : EmailMessage;
 
   emailSender : Observable<any>;
 
+  // TODO: get rid of this
   formError = "";
+
+  // NOTE: Angular FORCES us to do this. You cannot access utils from anywhere other than the controller.
+  isEmptyObject = isEmptyObject;
 
   constructor(private senderService : SenderService,
     private messageSentService : MessageSentService,
-    private router : Router) { }
+    private router : Router) {
+      // define our models in here
+      this.emailMessage = new EmailMessage();
+      this.emailMessage.recipient = RECIPIENTS[0]
+    }
 
   ngOnInit() {
   }
 
 
-  clearFields() { 
+  clearFields() {
 
   }
 
-  sendEmail() { 
+  /**
+   * @todo put in an `onDone` callback of the signature (err), or of signature (success)
+   */
+  sendEmail() {
     // first thing we should do is disable the button
     this.formSubmitting = true;
-    // if the user entered invalid input, handle it
-    if (/^([a-z]@[a-z]).[a-z]$/.test(this.emailMessage.sender.email)) { 
-      this.handleError("Bad email")
-      return;
-    }
+    // do the request
     this.emailSender = (this.senderService
       .send(this.emailMessage))
     this.emailSender
       .subscribe(res => {
-        console.log(res)
-        if (res.code === 200) { 
-          // re-enable the button 
+        if (res.code === 200) {
+          // re-enable the button
           this.formSubmitting = false;
           // post the data to the "Message Sent" service"
           this.messageSentService.announceMessageSent(res.message)
           // navigate straight to the success page
           this.router.navigateByUrl('/contact/messageSent')
-            .then((val) => { 
-              if (!val) { 
-                console.error("redirect failed.")
-              }
-              else {
-                console.log("Should be redirecting any second now...")
-              }
+            .then((val) => {
+              // TODO: invoke onDone() in here
             })
         }
         else {
@@ -85,11 +90,36 @@ export class ContactComponent implements OnInit {
         }
       })
   }
-    
-  private handleError(cause : string) { 
+
+  private handleError(cause : string) {
     // re-enable the button
     this.formSubmitting = false;
     //  show error message either somewhere in the form or as a modal
     this.formError = cause;
+  }
+
+  /**
+   * @todo refactor this using Validator classes
+   */
+  get Errors() {
+    let errorObj = {}
+
+    if (this.emailMessage.subject == '')
+      errorObj['Subject'] = 'Subject is required';
+
+    if (this.emailMessage.sender.name == '')
+      errorObj['Name'] = 'Please enter your name';
+    else if (!this.emailMessage.sender.name.match(NameRegex))
+      errorObj['Name'] = 'That name is invalid';
+
+    if (this.emailMessage.sender.email == '')
+      errorObj['Email'] = 'Email is required';
+    else if (!this.emailMessage.sender.email.match(EmailRegex))
+      errorObj['Email'] = 'Please enter valid email';
+
+    if (!this.emailMessage.message)
+      errorObj['Message'] = 'Message is required';
+
+    return errorObj;
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MENU_OPTIONS } from './menu-options';
-import { MenuOption } from './menu-option';
+import { MenuOption } from '../../../models/menu-option';
 import { RouterStateSnapshot, Router, RouterEvent, NavigationEnd } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AutoUnsubscribe } from '../../../auto-unsubscribe';
@@ -23,10 +23,10 @@ export class MenuComponent implements OnInit {
 
   constructor(private router : Router) {
     const snapshot: RouterStateSnapshot = router.routerState.snapshot;
-    this.selectedMenuOption = this.menuOptions.filter((option) => option.routerLink === snapshot.url)[0];
+    this.selectedMenuOption = this.menuOptions.find((option) => option.routerLink === snapshot.url);
     this.routerChanges = router.events
       .subscribe((val : NavigationEnd) => {
-        this.selectedMenuOption = this.menuOptions.filter((option) => option.routerLink === val.url)[0];
+        this.selectedMenuOption = this.menuOptions.find((option) => option.routerLink === val.url);
       })
 
   }

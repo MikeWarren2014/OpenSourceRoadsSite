@@ -7,14 +7,6 @@ p, span, div, a {
     color: #ffffae;
 }
 
-.left {
-    float : left;
-}
-
-.right {
-    float : right;
-}
-
 .container-fluid {
   top: 0;
   margin-top: 45px; /* TODO: We should **really** find another way to go about this. We shouldn't be hardcoding in stuff like this. */
@@ -30,19 +22,4 @@ side-menu {
   position: fixed;
 }
 
-/* fractional-width classes */
-.nine-tenths { width : 90%; }
-.five-sixths { width : 83.33333333333333333333%; }
-.four-fifths { width : 80%; }
-.three-fourths { width : 75%; }
-.seven-tenths { width : 70%; }
-.two-thirds { width : 66.666666666666666666666%; }
-.three-fifths { width : 60%; }
-.half { width: 50%; }
-.two-fifths { width : 40%; }
-.third { width : 33.33333333333333333333333%; }
-.three-tenths { width : 30%; }
-.fourth { width : 25%; }
-.fifth { width : 20%;}
-.sixth { width : 16.66666666666666666666666%; }
-.tenth { width : 10%; }
+

@@ -1,27 +1,21 @@
-import { PointOfContact } from "./point-of-contact";
-import { RECIPIENTS } from "./recipients";
-import { Person } from "./person";
+import { PointOfContact } from "../../../models/point-of-contact";
+import { Person } from "../../../models/person";
 
-export class EmailMessage { 
+export class EmailMessage {
 
-    constructor(public subject : string, 
-        public sender: Person, 
-        public message : string,
-        public recipient : PointOfContact) { 
+    constructor(public subject : string = '',
+        public sender: Person = new Person(),
+        public message : string = '',
+        public recipient : PointOfContact = null) {
 
     }
 
-    public static EMPTY_FIELDS = new EmailMessage('',
-        Person.EMPTY_FIELDS,
-        '',
-        RECIPIENTS[0]);
-
     /**
-     * 
+     * @todo either refactor this or get rid of this
      * @param email the email to validate
      * @returns that email is of valid format
      */
-    public static isValidEmail(email : string) : boolean { 
+    public static isValidEmail(email : string) : boolean {
         return /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(email)
     }
 

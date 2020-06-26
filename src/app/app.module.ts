@@ -24,9 +24,9 @@ import { MessageSentService } from './services/message-sent.service';
     MenuComponent,
     AboutComponent,
     ContactComponent,
-    MessageSentComponent
+    MessageSentComponent,
   ],
-  
+
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
