@@ -3,7 +3,7 @@
 .content {
   background-color: #222;
   margin: 0 20px;
-  padding: 10px 0 15px;
+  padding: 15px;
   border-radius: 3px;
 
 }
@@ -41,18 +41,12 @@ a.material-icons:active {
 
 }
 
-.field-label {
-  width : 20%;
-}
-.field {
-  width : 70%;
-}
-
 .row {
   margin-top: 10px;
   margin-bottom: 10px;
   display: inline-block;
   width: 100%;
+  margin-left:0;
 }
 #message {
   height: 200px;
