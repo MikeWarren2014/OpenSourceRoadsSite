@@ -25,16 +25,6 @@ nav {
   justify-content: flex-end;
 }
 
-#pageTitle {
-  color: white;
-  text-decoration: initial;
-  background-color: black;
-}
-
-#menuBars {
-  float: right;
-}
-
 #menuButton:hover {
   background-color: white;
 }
@@ -43,12 +33,20 @@ nav {
   background-color: black;
 }
 
+#menuButton:focus {
+  outline: unset;
+}
+
 #menuButton:active {
   background-color: yellow;
 }
 
 #menuButton:active .bar {
   background-color: black;
+}
+
+#menuBars {
+  float: right;
 }
 
 .bar {
@@ -65,5 +63,8 @@ nav {
 #pageTitle {
   font-family: monospace;
   font-size: 3em;
-  width: 100%;
+
+  color: white;
+  text-decoration: initial;
+  background-color: black;
 }

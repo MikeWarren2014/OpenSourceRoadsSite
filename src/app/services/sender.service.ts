@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { EmailMessage } from "../components/dashboard/contact/email-message";
+import { EmailMessage } from "../models/email-message/email-message";
 
 @Injectable()
 export abstract class SenderService{

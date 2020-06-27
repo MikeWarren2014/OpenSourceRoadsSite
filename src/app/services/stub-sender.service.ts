@@ -1,6 +1,6 @@
 import { SenderService } from "./sender.service";
 import { Injectable } from "@angular/core";
-import { EmailMessage } from "../components/dashboard/contact/email-message";
+import { EmailMessage } from "../models/email-message/email-message";
 import { Observable, of } from "rxjs";
 
 @Injectable()

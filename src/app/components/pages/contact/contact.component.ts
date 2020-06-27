@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PointOfContact } from '../../../models/point-of-contact';
-import { EmailMessage } from './email-message';
+import { PointOfContact } from '../../../models/point-of-contact/point-of-contact';
+import { EmailMessage } from '../../../models/email-message/email-message';
 import { RECIPIENTS } from './recipients';
-import { Person } from '../../../models/person';
+import { Person } from '../../../models/person/person';
 import { ContactService } from '../../../services/contact.service';
 import { Observable } from 'rxjs';
 import { AutoUnsubscribe } from '../../../auto-unsubscribe';

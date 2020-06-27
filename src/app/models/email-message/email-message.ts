@@ -1,5 +1,5 @@
-import { PointOfContact } from "../../../models/point-of-contact";
-import { Person } from "../../../models/person";
+import { PointOfContact } from "../point-of-contact/point-of-contact";
+import { Person } from "../person/person";
 
 export class EmailMessage {
 

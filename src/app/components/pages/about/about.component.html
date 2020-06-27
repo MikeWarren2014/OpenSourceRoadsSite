@@ -1,0 +1,17 @@
+<div>
+  <h2 class="h2">{{title | uppercase}}</h2>
+
+  <div>
+    <app-who-we-are></app-who-we-are>
+
+    <h3>HOW WE GOT STARTED</h3>
+    <app-small-image-carousel
+      [images]=""></app-small-image-carousel>
+
+      <div class="row w-100">
+        <!-- TODO: This is going to route to another page called "Get Involved" -->
+        <a id="contact-btn" class="btn btn-primary center" routerLink="/contact">Contact us!</a>
+
+      </div>
+  </div>
+</div>

@@ -1,11 +1,9 @@
-import { Component, OnInit } from "@angular/core";
-import { MENU_OPTIONS } from './menu-options';
-import { MenuOption } from '../../../models/menu-option';
-import { RouterStateSnapshot, Router, RouterEvent, NavigationEnd } from '@angular/router';
-import { Observable } from 'rxjs';
-import { AutoUnsubscribe } from '../../../auto-unsubscribe';
+import { Component } from "@angular/core";
+import { RouterStateSnapshot, Router,  NavigationEnd } from '@angular/router';
 
-import { filter } from 'rxjs/operators';
+import { MENU_OPTIONS } from './menu-options';
+import { MenuOption } from '../../../../models/menu-option/menu-option';
+import { AutoUnsubscribe } from '../../../../auto-unsubscribe';
 
 @Component({
   selector: 'side-menu',
@@ -13,7 +11,7 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./menu.component.css']
 })
 @AutoUnsubscribe
-export class MenuComponent implements OnInit {
+export class MenuComponent {
 
   menuOptions = MENU_OPTIONS;
 
@@ -29,11 +27,6 @@ export class MenuComponent implements OnInit {
         this.selectedMenuOption = this.menuOptions.find((option) => option.routerLink === val.url);
       })
 
-  }
-
-
-
-  ngOnInit() {
   }
 
   markSelected(option : MenuOption) {

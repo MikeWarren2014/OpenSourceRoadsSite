@@ -1,4 +1,4 @@
-import { MenuOption } from "../../../models/menu-option";
+import { MenuOption } from "../../../../models/menu-option/menu-option";
 
 export const MENU_OPTIONS : Array<MenuOption> = [
     {

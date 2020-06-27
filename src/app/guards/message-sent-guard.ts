@@ -9,22 +9,20 @@ export class MessageSentGuard implements CanActivate{
 
     constructor(private router: Router,
         private service : MessageSentService ) {
-        } 
+        }
 
     canActivate(route: ActivatedRouteSnapshot,
-        state: RouterStateSnapshot) : Observable<boolean> { 
+        state: RouterStateSnapshot) : Observable<boolean> {
         return this.service.messageSent.pipe(
             first(),
             map((msg) => {
-                console.log(msg);
                 return !!msg;
             }),
             switchMap(sent => {
                 if (!sent) {
                     this.router.navigate(['/home']);
-                    return of(false);
                 }
-                return of(true);
+                return of(sent);
             })
         );
     }
