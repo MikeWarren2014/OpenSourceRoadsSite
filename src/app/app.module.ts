@@ -34,7 +34,6 @@ import { routes } from './app.routing';
     AboutComponent,
     ContactComponent,
     MessageSentComponent,
-    CommaJoinPipe,
     WhoWeAreComponent,
     SmallImageCarouselComponent,
   ],
