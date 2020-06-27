@@ -20,6 +20,8 @@ import { SmallImageCarouselComponent } from './components/widgets/general/small-
 /* services */
 import { ContactService } from './services/contact.service';
 import { MessageSentService } from './services/message-sent.service';
+/* guards */
+import { MessageSentGuard } from './guards/message-sent-guard';
 /* routes */
 import { routes } from './app.routing';
 
@@ -33,6 +35,7 @@ import { routes } from './app.routing';
     ContactComponent,
     MessageSentComponent,
     CommaJoinPipe,
+    WhoWeAreComponent,
     SmallImageCarouselComponent,
   ],
 
