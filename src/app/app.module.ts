@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 /* page-level components */
@@ -24,6 +25,7 @@ import { MessageSentService } from './services/message-sent.service';
 import { MessageSentGuard } from './guards/message-sent-guard';
 /* routes */
 import { routes } from './app.routing';
+import { LoaderComponent } from './app/components/widgets/page/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -36,13 +38,15 @@ import { routes } from './app.routing';
     MessageSentComponent,
     WhoWeAreComponent,
     SmallImageCarouselComponent,
+    LoaderComponent,
   ],
 
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule, // TODO: this may be a YAGNI. This was placed in here automatically.
   ],
   providers: [ContactService, MessageSentGuard, MessageSentService],
   bootstrap: [AppComponent]
