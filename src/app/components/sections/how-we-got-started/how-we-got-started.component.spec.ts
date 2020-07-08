@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SmallImageCarouselComponent } from './small-image-carousel.component';
+import { HowWeGotStartedComponent } from './how-we-got-started.component';
 
-describe('SmallImageCarouselComponent', () => {
-  let component: SmallImageCarouselComponent;
-  let fixture: ComponentFixture<SmallImageCarouselComponent>;
+describe('HowWeGotStartedComponent', () => {
+  let component: HowWeGotStartedComponent;
+  let fixture: ComponentFixture<HowWeGotStartedComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SmallImageCarouselComponent ]
+      declarations: [ HowWeGotStartedComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SmallImageCarouselComponent);
+    fixture = TestBed.createComponent(HowWeGotStartedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

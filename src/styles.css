@@ -16,13 +16,6 @@ body {
   float : right;
 }
 
-h2 {
-  font-size : 2em;
-}
-h3 {
-  font-size : 1.5em;
-}
-
 .ng-invalid.ng-dirty {
   background-color: #ff5555;
   border-color: red;

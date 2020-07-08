@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PointOfContact } from '../../../models/point-of-contact/point-of-contact';
 import { EmailMessage } from '../../../models/email-message/email-message';
 import { RECIPIENTS } from './recipients';
@@ -14,6 +14,7 @@ import { FakeSenderService } from '../../../services/fake-sender.service';
 
 import { isEmptyObject } from "../../../utils/general";
 import { NameRegex, EmailRegex } from '../../../constants/validation';
+import { LoaderComponent } from '../../widgets/general/loader/loader.component';
 
 @Component({
   selector: 'app-contact',
@@ -27,6 +28,8 @@ import { NameRegex, EmailRegex } from '../../../constants/validation';
 })
 @AutoUnsubscribe
 export class ContactComponent implements OnInit {
+
+  @ViewChild(LoaderComponent) loader;
 
   title = 'Contact';
 
@@ -59,21 +62,19 @@ export class ContactComponent implements OnInit {
   }
 
 
-  clearFields() {
-
-  }
-
   /**
    * @todo put in an `onDone` callback of the signature (err), or of signature (success)
    */
   sendEmail() {
     // first thing we should do is disable the button
     this.formSubmitting = true;
+    this.loader.show()
     // do the request
     this.emailSender = (this.senderService
       .send(this.emailMessage))
     this.emailSender
       .subscribe(res => {
+        this.loader.hide()
         if (res.code === 200) {
           // re-enable the button
           this.formSubmitting = false;
