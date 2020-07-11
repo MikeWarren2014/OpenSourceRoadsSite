@@ -1,63 +1,123 @@
-<div>
-  <h2 class="h2">{{title | uppercase}}</h2>
-  <p>
-    Here is our information. Please leave a message and we shall return it as soon as possible!
-  </p>
+<app-base>
+  <div>
+    <h2 class="h2">{{ title | uppercase }}</h2>
+    <p>
+      Here is our information. Please leave a message and we shall return it as
+      soon as possible!
+    </p>
 
-  <div class="content">
-    <div>
-      <h3>Contacts</h3>
+    <div class="content">
       <div>
-        <div class="first column">
-          <div *ngFor="let contact of contacts" class="contact">
-            <span>{{contact.name}}</span><br>
-            <span>{{contact.roles.join(', ')}}</span> <br>
-            <a class="material-icons" (click)="pointOfContact = contact" title="Send message to {{contact.name}}">email</a>
+        <h3>Contacts</h3>
+        <div>
+          <div class="first column">
+            <div *ngFor="let contact of contacts" class="contact">
+              <span>{{ contact.name }}</span
+              ><br />
+              <span>{{ contact.roles.join(", ") }}</span> <br />
+              <a
+                class="material-icons"
+                (click)="pointOfContact = contact"
+                title="Send message to {{ contact.name }}"
+                >email</a
+              >
+            </div>
           </div>
-        </div>
-        <div class="second column">
-          <span class="row">
-            <h4 style="display: inline">To: </h4> {{pointOfContact.name}}
-          </span>
-          <span class="row">
-            <label for="subject" class="field-label column col-md-3">Subject</label>
-            <input id="subject" name="subject" #subject="ngModel" [(ngModel)]="emailMessage.subject" type="text" class="field column col-md-9" required autofocus>
-          </span>
-          <span class="error" *ngIf="subject.invalid && !subject.pristine">{{Errors['Subject']}}</span>
-          <span class="row">
-            <label for="name" class="field-label column col-md-3">Name</label>
-            <input id="name" name="name" #name="ngModel" [(ngModel)]="emailMessage.sender.name" type="text" pattern="[A-Za-z ]+" class="field column col-md-9" required>
-          </span>
-          <span class="error" *ngIf="name.invalid && !name.pristine">{{Errors['Name']}}</span>
-          <span class="row">
-            <label for="email" class="field-label column col-md-3">E-mail</label>
-            <input id="email" name="email" type="email" #email="ngModel" [(ngModel)]="emailMessage.sender.email" class="field column col-md-9" email required>
-          </span>
-          <span class="error" *ngIf="email.invalid && !email.pristine">{{Errors['Email']}} </span>
-          <span class="row">
-            <label for="message" class="field-label column col-md-3">Message</label>
-            <textarea id="message" name="message" #message="ngModel" [(ngModel)]="emailMessage.message" class="field column col-md-9" required></textarea>
-          </span>
-          <span class="error" *ngIf="message.invalid && !message.pristine">{{Errors['Message']}}</span>
-          <span class="row">
-            <span class="right error">
-              <!-- TODO: this needs to come from a getter. -->
-              {{formError}}
+          <div class="second column">
+            <span class="row">
+              <h4 style="display: inline;">To:</h4>
+              {{ pointOfContact.name }}
             </span>
-          </span>
-          <span class="row">
-            <span class="right">
-              <button
-                *ngIf="isEmptyObject(Errors)"
-                id="send-email"
-                (click)="sendEmail()"
-                [disabled]=formSubmitting
-                class="form-button">{{formSubmitting ? "Sending..." : "Send Email"}}</button>
+            <span class="row">
+              <label for="subject" class="field-label column col-md-3"
+                >Subject</label
+              >
+              <input
+                id="subject"
+                name="subject"
+                #subject="ngModel"
+                [(ngModel)]="emailMessage.subject"
+                type="text"
+                class="field column col-md-9"
+                required
+                autofocus
+              />
             </span>
-          </span>
+            <span class="error" *ngIf="subject.invalid && !subject.pristine">{{
+              Errors["Subject"]
+            }}</span>
+            <span class="row">
+              <label for="name" class="field-label column col-md-3">Name</label>
+              <input
+                id="name"
+                name="name"
+                #name="ngModel"
+                [(ngModel)]="emailMessage.sender.name"
+                type="text"
+                pattern="[A-Za-z ]+"
+                class="field column col-md-9"
+                required
+              />
+            </span>
+            <span class="error" *ngIf="name.invalid && !name.pristine">{{
+              Errors["Name"]
+            }}</span>
+            <span class="row">
+              <label for="email" class="field-label column col-md-3"
+                >E-mail</label
+              >
+              <input
+                id="email"
+                name="email"
+                type="email"
+                #email="ngModel"
+                [(ngModel)]="emailMessage.sender.email"
+                class="field column col-md-9"
+                email
+                required
+              />
+            </span>
+            <span class="error" *ngIf="email.invalid && !email.pristine"
+              >{{ Errors["Email"] }}
+            </span>
+            <span class="row">
+              <label for="message" class="field-label column col-md-3"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                #message="ngModel"
+                [(ngModel)]="emailMessage.message"
+                class="field column col-md-9"
+                required
+              ></textarea>
+            </span>
+            <span class="error" *ngIf="message.invalid && !message.pristine">{{
+              Errors["Message"]
+            }}</span>
+            <span class="row">
+              <span class="right error">
+                <!-- TODO: this needs to come from a getter. -->
+                {{ formError }}
+              </span>
+            </span>
+            <span class="row">
+              <span class="right">
+                <button
+                  *ngIf="isEmptyObject(Errors)"
+                  id="send-email"
+                  (click)="sendEmail()"
+                  [disabled]="formSubmitting"
+                  class="form-button"
+                >
+                  {{ formSubmitting ? "Sending..." : "Send Email" }}
+                </button>
+              </span>
+            </span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<app-loader></app-loader>
+</app-base>
