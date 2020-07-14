@@ -1,8 +1,7 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { PointOfContact } from "../../../models/point-of-contact/point-of-contact";
 import { EmailMessage } from "../../../models/email-message/email-message";
 import { RECIPIENTS } from "./recipients";
-import { Person } from "../../../models/person/person";
 import { ContactService } from "../../../services/contact.service";
 import { Observable } from "rxjs";
 import { AutoUnsubscribe } from "../../../auto-unsubscribe";
@@ -14,7 +13,6 @@ import { FakeSenderService } from "../../../services/fake-sender.service";
 
 import { isEmptyObject } from "../../../utils/general";
 import { NameRegex, EmailRegex } from "../../../constants/validation";
-import { LoaderComponent } from "../../widgets/general/loader/loader.component";
 import { BaseComponent } from "../../base/base.component";
 
 @Component({
@@ -29,19 +27,17 @@ import { BaseComponent } from "../../base/base.component";
   ],
 })
 @AutoUnsubscribe
-export class ContactComponent extends BaseComponent implements OnInit {
+export class ContactComponent extends BaseComponent {
   title = "Contact";
 
   contacts = RECIPIENTS;
-
-  // is the form submitting?
-  // TODO: can we replace this?!
-  formSubmitting = false;
 
   pointOfContact: PointOfContact = RECIPIENTS[0];
   emailMessage: EmailMessage;
 
   emailSender: Observable<any>;
+
+  @ViewChild("submitBtn") submitBtn: ElementRef;
 
   // TODO: get rid of this
   formError = "";
@@ -60,37 +56,42 @@ export class ContactComponent extends BaseComponent implements OnInit {
     this.emailMessage.recipient = RECIPIENTS[0];
   }
 
-  ngOnInit() {}
+  ngAfterViewChecked() {
+    // if there are no errors, scroll the button into view
+    if (!Object.keys(this.Errors).length && this.submitBtn.nativeElement) {
+      this.submitBtn.nativeElement.scrollIntoView();
+    }
+  }
 
   /**
-   * @todo put in an `onDone` callback of the signature (err), or of signature (success)
+   * @todo put in an `onDone` callback of the signature (err, res), or of signature (success)
    */
   sendEmail() {
-    // first thing we should do is disable the button
-    this.formSubmitting = true;
     this.showLoader();
     // do the request
     this.emailSender = this.senderService.send(this.emailMessage);
-    this.emailSender.subscribe((res) => {
-      this.hideLoader();
-      if (res.code === 200) {
-        // re-enable the button
-        this.formSubmitting = false;
-        // post the data to the "Message Sent" service"
-        this.messageSentService.announceMessageSent(res.message);
-        // navigate straight to the success page
-        this.router.navigateByUrl("/contact/messageSent").then((val) => {
-          // TODO: invoke onDone() in here
-        });
-      } else {
-        this.handleError(res.message);
+    this.emailSender.subscribe(
+      (res) => {
+        this.hideLoader();
+        if (res.code === 200) {
+          // post the data to the "Message Sent" service
+          this.messageSentService.announceMessageSent(res.message);
+          // navigate straight to the success page
+          this.router.navigateByUrl("/contact/messageSent").then((val) => {
+            // TODO: invoke onDone() in here
+          });
+        } else {
+          this.handleError(res.message);
+        }
+      },
+      (err) => {
+        this.hideLoader();
+        this.handleError(err.message);
       }
-    });
+    );
   }
 
   private handleError(cause: string) {
-    // re-enable the button
-    this.formSubmitting = false;
     //  show error message either somewhere in the form or as a modal
     this.formError = cause;
   }

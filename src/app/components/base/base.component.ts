@@ -1,25 +1,22 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
 import { LoaderComponent } from "../widgets/general/loader/loader.component";
+import { Loadable } from "../../interfaces/loadable";
+import { LoaderWrapperComponent } from "./loader-wrapper/loader-wrapper.component";
 
-@Component({
-  selector: "app-base",
-  templateUrl: "./base.component.html",
-  styleUrls: ["./base.component.css"],
-})
-export class BaseComponent implements AfterViewInit {
-  @ViewChild(LoaderComponent) loader: LoaderComponent;
+export class BaseComponent implements Loadable {
+  @ViewChild(LoaderWrapperComponent) loader: LoaderWrapperComponent;
+
+  protected isLoading: boolean = false;
 
   constructor() {}
 
-  ngAfterViewInit() {
-    console.log(this.loader);
-  }
-
   showLoader() {
-    this.loader.show();
+    this.isLoading = true;
+    this.loader.showLoader();
   }
 
   hideLoader() {
-    this.loader.hide();
+    this.isLoading = false;
+    this.loader.hideLoader();
   }
 }

@@ -1,4 +1,4 @@
-<app-base>
+<app-loader-wrapper>
   <div>
     <h2 class="h2">{{ title | uppercase }}</h2>
     <p>
@@ -108,10 +108,11 @@
                   *ngIf="isEmptyObject(Errors)"
                   id="send-email"
                   (click)="sendEmail()"
-                  [disabled]="formSubmitting"
+                  [disabled]="isLoading"
                   class="form-button"
+                  #submitBtn
                 >
-                  {{ formSubmitting ? "Sending..." : "Send Email" }}
+                  {{ isLoading ? "Sending..." : "Send Email" }}
                 </button>
               </span>
             </span>
@@ -120,4 +121,4 @@
       </div>
     </div>
   </div>
-</app-base>
+</app-loader-wrapper>
