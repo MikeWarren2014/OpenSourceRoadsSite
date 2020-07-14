@@ -30,6 +30,8 @@ import { MessageSentGuard } from "./guards/message-sent-guard";
 /* routes */
 import { routes } from "./app.routing";
 import { HowWeGotStartedComponent } from "./components/sections/how-we-got-started/how-we-got-started.component";
+import { BaseComponent } from "./components/base/base.component";
+import { LoaderWrapperComponent } from "./components/base/loader-wrapper/loader-wrapper.component";
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { HowWeGotStartedComponent } from "./components/sections/how-we-got-start
     ImageCarouselComponent,
     LoaderComponent,
     HowWeGotStartedComponent,
+    LoaderWrapperComponent,
   ],
 
   imports: [
