@@ -32,6 +32,7 @@ import { routes } from "./app.routing";
 import { HowWeGotStartedComponent } from "./components/sections/how-we-got-started/how-we-got-started.component";
 import { BaseComponent } from "./components/base/base.component";
 import { LoaderWrapperComponent } from "./components/base/loader-wrapper/loader-wrapper.component";
+import { WhatWeDoneComponent } from './components/sections/what-we-done/what-we-done.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { LoaderWrapperComponent } from "./components/base/loader-wrapper/loader-
     LoaderComponent,
     HowWeGotStartedComponent,
     LoaderWrapperComponent,
+    WhatWeDoneComponent,
   ],
 
   imports: [

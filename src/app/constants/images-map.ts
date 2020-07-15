@@ -49,6 +49,18 @@ export const ImagesMap = Object.freeze({
         "assets/images/work/SealcoatingColdPatch.jpg",
         "A freshly tamped patch being seal coated to increase the lifespan of the patch"
       ),
+      new Image(
+        8,
+        "assets/images/work/IndianaShapedPothole.jpg",
+        "A pothole that was cut with a concrete saw. Coincidentally, it's shaped like Indiana!"
+      ),
+    ],
+    "2019": [
+      new Image(
+        9,
+        "assets/images/work/FillingACrater.jpg",
+        "A crater that got filled with limestone base, followed by cold patch"
+      ),
     ],
   },
 });

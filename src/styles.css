@@ -4,16 +4,15 @@ body {
   margin: 0;
 }
 
-
 #page-content {
-  min-height: 100vh
+  min-height: 100vh;
 }
 
 .left {
-  float : left;
+  float: left;
 }
 .right {
-  float : right;
+  float: right;
 }
 
 .ng-invalid.ng-dirty {
@@ -23,21 +22,3 @@ body {
 .error {
   color: red;
 }
-
-/* fractional-width classes */
-/* TODO: we're about to use Bootstrap, rendering these extra. */
-.nine-tenths { width : 90%; }
-.five-sixths { width : 83.33333333333333333333%; }
-.four-fifths { width : 80%; }
-.three-fourths { width : 75%; }
-.seven-tenths { width : 70%; }
-.two-thirds { width : 66.666666666666666666666%; }
-.three-fifths { width : 60%; }
-.half { width: 50%; }
-.two-fifths { width : 40%; }
-.third { width : 33.33333333333333333333333%; }
-.three-tenths { width : 30%; }
-.fourth { width : 25%; }
-.fifth { width : 20%;}
-.sixth { width : 16.66666666666666666666666%; }
-.tenth { width : 10%; }
