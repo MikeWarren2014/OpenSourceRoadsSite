@@ -8,8 +8,6 @@ export class BaseComponent implements Loadable {
 
   protected isLoading: boolean = false;
 
-  constructor() {}
-
   showLoader() {
     this.isLoading = true;
     this.loader.showLoader();

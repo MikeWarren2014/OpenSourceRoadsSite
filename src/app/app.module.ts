@@ -32,7 +32,10 @@ import { routes } from "./app.routing";
 import { HowWeGotStartedComponent } from "./components/sections/how-we-got-started/how-we-got-started.component";
 import { BaseComponent } from "./components/base/base.component";
 import { LoaderWrapperComponent } from "./components/base/loader-wrapper/loader-wrapper.component";
-import { WhatWeDoneComponent } from './components/sections/what-we-done/what-we-done.component';
+import { WhatWeDoneComponent } from "./components/sections/what-we-done/what-we-done.component";
+import { PageSectionWrapperComponent } from "./components/sections/page-section-wrapper/page-section-wrapper.component";
+import { BasePageSectionComponent } from './components/sections/base-page-section/base-page-section.component';
+import { WeNeedYouComponent } from './components/sections/we-need-you/we-need-you.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +52,9 @@ import { WhatWeDoneComponent } from './components/sections/what-we-done/what-we-
     HowWeGotStartedComponent,
     LoaderWrapperComponent,
     WhatWeDoneComponent,
+    PageSectionWrapperComponent,
+    BasePageSectionComponent,
+    WeNeedYouComponent,
   ],
 
   imports: [

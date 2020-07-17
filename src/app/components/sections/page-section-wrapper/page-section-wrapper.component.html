@@ -1,0 +1,9 @@
+<h3>{{ title | uppercase }}</h3>
+<app-image-carousel
+  *ngIf="images.length > 1; else singleImage"
+  [images]="images"
+></app-image-carousel>
+<ng-template #singleImage>
+  <img *ngIf="images.length === 1" [src]="images[0].image" class="w-100" />
+</ng-template>
+<ng-content></ng-content>
