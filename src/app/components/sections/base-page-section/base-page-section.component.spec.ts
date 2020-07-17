@@ -22,3 +22,4 @@ describe("BasePageSectionComponent", () => {
     expect(component).toBeTruthy();
   });
 
+});
