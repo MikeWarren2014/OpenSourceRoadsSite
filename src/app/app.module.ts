@@ -36,6 +36,9 @@ import { WhatWeDoneComponent } from "./components/sections/what-we-done/what-we-
 import { PageSectionWrapperComponent } from "./components/sections/page-section-wrapper/page-section-wrapper.component";
 import { BasePageSectionComponent } from './components/sections/base-page-section/base-page-section.component';
 import { WeNeedYouComponent } from './components/sections/we-need-you/we-need-you.component';
+import { OurWorkSectionComponent } from './components/sections/our-work-section/our-work-section.component';
+import { GetInvolvedButtonComponent } from './components/widgets/general/buttons/get-involved-button/get-involved-button.component';
+import { FacebookButtonComponent } from './components/widgets/general/buttons/facebook-button/facebook-button.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +58,9 @@ import { WeNeedYouComponent } from './components/sections/we-need-you/we-need-yo
     PageSectionWrapperComponent,
     BasePageSectionComponent,
     WeNeedYouComponent,
+    OurWorkSectionComponent,
+    GetInvolvedButtonComponent,
+    FacebookButtonComponent,
   ],
 
   imports: [
