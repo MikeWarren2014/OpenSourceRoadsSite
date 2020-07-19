@@ -1,7 +1,9 @@
 <ngb-carousel #carousel>
   <ng-template ngbSlide *ngFor="let img of images; index as i">
-    <div class="img-wrapper">
-      <img class="carousel-image" [src]="img.image" />
-    </div>
+    <a href="#" target="_blank" rel="nofollow noopener noreferrer">
+      <div class="img-wrapper">
+        <img class="carousel-image" [src]="img.image" />
+      </div>
+    </a>
   </ng-template>
 </ngb-carousel>
