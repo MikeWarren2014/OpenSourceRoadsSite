@@ -3,9 +3,9 @@ import { BasePageSectionComponent } from "../base-page-section/base-page-section
 
 @Component({
   selector: "app-we-need-you",
-  templateUrl: "./we-need-you.component.html",
-  styleUrls: ["./we-need-you.component.css"],
+  templateUrl: "./we-need-you-section.component.html",
+  styleUrls: ["./we-need-you-section.component.css"],
 })
-export class WeNeedYouComponent extends BasePageSectionComponent {
+export class WeNeedYouSectionComponent extends BasePageSectionComponent {
   title = "We need you!!";
 }

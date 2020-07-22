@@ -5,10 +5,10 @@ import { BasePageSectionComponent } from "../base-page-section/base-page-section
 
 @Component({
   selector: "app-how-we-got-started",
-  templateUrl: "./how-we-got-started.component.html",
-  styleUrls: ["./how-we-got-started.component.css"],
+  templateUrl: "./how-we-got-started-section.component.html",
+  styleUrls: ["./how-we-got-started-section.component.css"],
 })
-export class HowWeGotStartedComponent extends BasePageSectionComponent {
+export class HowWeGotStartedSectionComponent extends BasePageSectionComponent {
   title = "How we got started";
   images = [
     ImagesMap[ImagePrimaryKeys.PEOPLE][ImageSecondaryKeys.MIKE][0],

@@ -6,10 +6,10 @@ import { BasePageSectionComponent } from "../base-page-section/base-page-section
 
 @Component({
   selector: "app-who-we-are",
-  templateUrl: "./who-we-are.component.html",
-  styleUrls: ["./who-we-are.component.css"],
+  templateUrl: "./who-we-are-section.component.html",
+  styleUrls: ["./who-we-are-section.component.css"],
 })
-export class WhoWeAreComponent extends BasePageSectionComponent {
+export class WhoWeAreSectionComponent extends BasePageSectionComponent {
   title = "Who we are";
   images = [ImagesMap[ImagePrimaryKeys.PEOPLE][ImageSecondaryKeys.TEAM][1]];
 }

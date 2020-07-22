@@ -6,10 +6,10 @@ import { BasePageSectionComponent } from "../base-page-section/base-page-section
 
 @Component({
   selector: "app-what-we-done",
-  templateUrl: "./what-we-done.component.html",
-  styleUrls: ["./what-we-done.component.css"],
+  templateUrl: "./what-we-done-section.component.html",
+  styleUrls: ["./what-we-done-section.component.css"],
 })
-export class WhatWeDoneComponent extends BasePageSectionComponent {
+export class WhatWeDoneSectionComponent extends BasePageSectionComponent {
   title = "What we've done";
   images = [
     ImagesMap[ImagePrimaryKeys.WORK_WEVE_DONE][2017][0],

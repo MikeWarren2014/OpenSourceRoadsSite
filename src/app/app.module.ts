@@ -17,7 +17,7 @@ import { ContactComponent } from "./components/pages/contact/contact.component";
 import { BannerComponent } from "./components/widgets/page/banner/banner.component";
 import { MenuComponent } from "./components/widgets/page/menu/menu.component";
 /* page-section/widget components */
-import { WhoWeAreComponent } from "./components/sections/who-we-are/who-we-are.component";
+import { WhoWeAreSectionComponent } from "./components/sections/who-we-are/who-we-are-section.component";
 import { MessageSentComponent } from "./components/pages/contact/message-sent/message-sent.component";
 /* widgets */
 import { ImageCarouselComponent } from "./components/widgets/general/image-carousel/image-carousel.component";
@@ -29,17 +29,19 @@ import { MessageSentService } from "./services/message-sent.service";
 import { MessageSentGuard } from "./guards/message-sent-guard";
 /* routes */
 import { routes } from "./app.routing";
-import { HowWeGotStartedComponent } from "./components/sections/how-we-got-started/how-we-got-started.component";
+import { HowWeGotStartedSectionComponent } from "./components/sections/how-we-got-started/how-we-got-started-section.component";
 import { BaseComponent } from "./components/base/base.component";
 import { LoaderWrapperComponent } from "./components/base/loader-wrapper/loader-wrapper.component";
-import { WhatWeDoneComponent } from "./components/sections/what-we-done/what-we-done.component";
+import { WhatWeDoneSectionComponent } from "./components/sections/what-we-done/what-we-done-section.component";
 import { PageSectionWrapperComponent } from "./components/sections/page-section-wrapper/page-section-wrapper.component";
 import { BasePageSectionComponent } from "./components/sections/base-page-section/base-page-section.component";
-import { WeNeedYouComponent } from "./components/sections/we-need-you/we-need-you.component";
+import { WeNeedYouSectionComponent } from "./components/sections/we-need-you/we-need-you-section.component";
 import { OurWorkSectionComponent } from "./components/sections/our-work-section/our-work-section.component";
 import { GetInvolvedButtonComponent } from "./components/widgets/general/buttons/get-involved-button/get-involved-button.component";
 import { FacebookButtonComponent } from "./components/widgets/general/buttons/facebook-button/facebook-button.component";
 import { GettingInvolvedComponent } from "./components/pages/getting-involved/getting-involved.component";
+import { DonorBoxDonationComponent } from "./components/widgets/third-party/donor-box-donation/donor-box-donation.component";
+import { DonateSectionComponent } from "./components/sections/donate/donate-section.component";
 
 @NgModule({
   declarations: [
@@ -50,19 +52,21 @@ import { GettingInvolvedComponent } from "./components/pages/getting-involved/ge
     AboutComponent,
     ContactComponent,
     MessageSentComponent,
-    WhoWeAreComponent,
+    WhoWeAreSectionComponent,
     ImageCarouselComponent,
     LoaderComponent,
-    HowWeGotStartedComponent,
+    HowWeGotStartedSectionComponent,
     LoaderWrapperComponent,
-    WhatWeDoneComponent,
+    WhatWeDoneSectionComponent,
     PageSectionWrapperComponent,
     BasePageSectionComponent,
-    WeNeedYouComponent,
+    WeNeedYouSectionComponent,
     OurWorkSectionComponent,
     GetInvolvedButtonComponent,
     FacebookButtonComponent,
     GettingInvolvedComponent,
+    DonorBoxDonationComponent,
+    DonateSectionComponent,
   ],
 
   imports: [

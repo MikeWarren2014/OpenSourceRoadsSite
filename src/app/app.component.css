@@ -1,10 +1,12 @@
 * {
-    font-family : monospace;
-
+  font-family: monospace;
 }
 
-p, span, div, a {
-    color: #ffffae;
+p,
+span,
+div,
+a {
+  color: #ffffae;
 }
 
 .container-fluid .row:first-child {
@@ -17,6 +19,5 @@ side-menu {
   text-align: left;
   background-color: rgb(0, 0, 0);
   position: fixed;
+  z-index: 16;
 }
-
-
