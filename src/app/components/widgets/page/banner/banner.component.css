@@ -60,6 +60,10 @@ nav {
   margin-bottom: 5px;
 }
 
+#page-title-container {
+  flex-grow: 5;
+}
+
 #pageTitle {
   font-family: monospace;
   font-size: 3em;

@@ -1,22 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
-  selector: 'banner',
-  templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.css']
+  selector: "banner",
+  templateUrl: "./banner.component.html",
+  styleUrls: ["./banner.component.css", "./banner.component.responsive.css"],
 })
 export class BannerComponent implements OnInit {
-
   public menuVisible = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  public toggleMenuVisible() { 
+  public toggleMenuVisible() {
     this.menuVisible = !this.menuVisible;
   }
-
 }
