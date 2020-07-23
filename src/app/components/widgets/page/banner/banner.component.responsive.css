@@ -1,2 +1,10 @@
-@media (max-width: 768px) {
+/* the beginning of the mobile devices */
+@media (max-width: 480px) {
+}
+
+/* many mobile devices */
+@media screen and (max-width: 412px) {
+  #page-title {
+    font-size: 2.5em;
+  }
 }

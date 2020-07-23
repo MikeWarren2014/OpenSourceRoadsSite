@@ -1,0 +1,6 @@
+/* many mobile devices */
+@media screen and (max-width: 412px) {
+  .container-fluid {
+    padding-top: 48px; /* TODO: we need to find a different way than just hardcoding it */
+  }
+}
