@@ -60,7 +60,7 @@ nav {
 }
 
 #page-title-container {
-  flex-grow: 5;
+  flex-grow: 5; /* We could use **any** large integer here. The actual value doesn't matter */
 }
 
 #page-title {
