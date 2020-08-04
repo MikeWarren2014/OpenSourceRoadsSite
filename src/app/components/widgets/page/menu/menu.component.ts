@@ -21,16 +21,20 @@ export class MenuComponent {
 
   routerChanges;
 
+  isVisible = false;
+
   constructor(private router: Router) {
-    const snapshot: RouterStateSnapshot = router.routerState.snapshot;
-    this.selectedMenuOption = this.menuOptions.find(
-      (option) => option.routerLink === snapshot.url
-    );
+    this.selectMenuOptionFrom(router.routerState.snapshot);
+    // subscribe to changes from the router
     this.routerChanges = router.events.subscribe((val: NavigationEnd) => {
-      this.selectedMenuOption = this.menuOptions.find(
-        (option) => option.routerLink === val.url
-      );
+      this.selectMenuOptionFrom(val);
     });
+  }
+
+  selectMenuOptionFrom(obj: { url: string }) {
+    this.selectedMenuOption = this.menuOptions.find(
+      (option) => option.routerLink === obj.url
+    );
   }
 
   markSelected(option: MenuOption) {
