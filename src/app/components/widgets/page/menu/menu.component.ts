@@ -31,11 +31,14 @@ export class MenuComponent extends BaseComponent {
     });
   }
 
-  selectMenuOptionFrom(obj: { url: string }) {
-    if (obj.url)
+  selectMenuOptionFrom(obj: { url: string; urlAfterRedirects?: string }) {
+    if (obj.url) {
+      const url =
+        obj.url === obj.urlAfterRedirects ? obj.url : obj.urlAfterRedirects;
       this.selectedMenuOption = this.menuOptions.find(
-        (option) => option.routerLink === obj.url
+        (option) => option.routerLink === url
       );
+    }
   }
 
   markSelected(option: MenuOption) {
