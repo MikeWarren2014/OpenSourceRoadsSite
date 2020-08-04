@@ -1,5 +1,5 @@
-import { Component, OnChanges } from "@angular/core";
-import { RouterStateSnapshot, Router, NavigationEnd } from "@angular/router";
+import { Component } from "@angular/core";
+import { Router, NavigationEnd } from "@angular/router";
 
 import { MenuOption } from "../../../../models/menu-option/menu-option";
 import { AutoUnsubscribe } from "../../../../auto-unsubscribe";
@@ -32,11 +32,10 @@ export class MenuComponent extends BaseComponent {
   }
 
   selectMenuOptionFrom(obj: { url: string }) {
-    this.selectedMenuOption = this.menuOptions.find(
-      (option) => option.routerLink === obj.url
-    );
-
-    // if (!this.selectedMenuOption) debugger;
+    if (obj.url)
+      this.selectedMenuOption = this.menuOptions.find(
+        (option) => option.routerLink === obj.url
+      );
   }
 
   markSelected(option: MenuOption) {

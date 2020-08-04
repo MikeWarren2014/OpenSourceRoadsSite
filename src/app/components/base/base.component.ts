@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
-import { LoaderComponent } from "../widgets/general/loader/loader.component";
+import { Component, ViewChild } from "@angular/core";
 import { Loadable } from "../../interfaces/loadable";
 import { LoaderWrapperComponent } from "./loader-wrapper/loader-wrapper.component";
 
