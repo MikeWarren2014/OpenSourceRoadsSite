@@ -1,10 +1,11 @@
-import { Component } from "@angular/core";
+import { Component, OnChanges } from "@angular/core";
 import { RouterStateSnapshot, Router, NavigationEnd } from "@angular/router";
 
 import { MenuOption } from "../../../../models/menu-option/menu-option";
 import { AutoUnsubscribe } from "../../../../auto-unsubscribe";
 import { routes } from "../../../../app.routing";
 import { MenuOptionBuilder } from "./menu-option-builder";
+import { BaseComponent } from "../../../base/base.component";
 
 @Component({
   selector: "side-menu",
@@ -12,7 +13,7 @@ import { MenuOptionBuilder } from "./menu-option-builder";
   styleUrls: ["./menu.component.css"],
 })
 @AutoUnsubscribe
-export class MenuComponent {
+export class MenuComponent extends BaseComponent {
   menuOptions = routes
     .filter(({ path }) => path !== "" && !path.includes("*"))
     .map((route) => MenuOptionBuilder.FromRoute(route));
@@ -21,9 +22,8 @@ export class MenuComponent {
 
   routerChanges;
 
-  isVisible = false;
-
   constructor(private router: Router) {
+    super();
     this.selectMenuOptionFrom(router.routerState.snapshot);
     // subscribe to changes from the router
     this.routerChanges = router.events.subscribe((val: NavigationEnd) => {
@@ -35,9 +35,12 @@ export class MenuComponent {
     this.selectedMenuOption = this.menuOptions.find(
       (option) => option.routerLink === obj.url
     );
+
+    // if (!this.selectedMenuOption) debugger;
   }
 
   markSelected(option: MenuOption) {
     this.selectedMenuOption = option;
+    this.hide();
   }
 }

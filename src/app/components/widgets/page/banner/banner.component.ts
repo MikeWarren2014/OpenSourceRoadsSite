@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
@@ -7,13 +7,9 @@ import { ActivatedRoute, Router } from "@angular/router";
   styleUrls: ["./banner.component.css", "./banner.component.responsive.css"],
 })
 export class BannerComponent implements OnInit {
-  public menuVisible = false;
+  @Output() onToggle: EventEmitter<any> = new EventEmitter();
 
   constructor() {}
 
   ngOnInit() {}
-
-  public toggleMenuVisible() {
-    this.menuVisible = !this.menuVisible;
-  }
 }

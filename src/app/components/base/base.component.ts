@@ -6,7 +6,16 @@ import { LoaderWrapperComponent } from "./loader-wrapper/loader-wrapper.componen
 export class BaseComponent implements Loadable {
   @ViewChild(LoaderWrapperComponent) loader: LoaderWrapperComponent;
 
+  isVisible: boolean = false;
   protected isLoading: boolean = false;
+
+  show() {
+    this.isVisible = true;
+  }
+
+  hide() {
+    this.isVisible = false;
+  }
 
   showLoader() {
     this.isLoading = true;
